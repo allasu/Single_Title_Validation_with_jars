@@ -9,10 +9,11 @@ public class HtmlValidation {
 
 	public static void main(String[] args) {
 		WebDriver dr = new HtmlUnitDriver();
-		
+				
 		String testCaseId = "TC-01.02";
-		String url = "https://weather.yahoo.com";
-		String expectedTitle = "Yahoo Weather - Weather Forecasts | Maps | News";
+		String param[] = args[0].split("\\|"); 
+		String url = param[0];
+		String expectedTitle = param[1];
 		
 		dr.get(url);
 		dr.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
